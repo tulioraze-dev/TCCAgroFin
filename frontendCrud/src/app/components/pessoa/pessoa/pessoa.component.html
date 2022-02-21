@@ -1,0 +1,60 @@
+<!-- HTML DO FORMULARIO PARA CADASTRO DE PESSOA-->
+
+<mat-card id="content" #content>
+  <mat-card-title>Cadastro de Pessoa</mat-card-title>
+  <form>
+    <!-- LINHA DO FORMULARIO CPF/CNPJ -->
+    <mat-form-field>
+      <input matInput placeholder="CPF/CNPJ" name="pessoa_Numero_Identificador"
+        [(ngModel)]="pessoa.pessoa_Numero_Identificador">
+    </mat-form-field>
+
+    <!-- LINHA DO FORMULARIO NOME DE PESSOA -->
+    <mat-form-field>
+      <input matInput placeholder="Nome" name="pessoa_Nome" [(ngModel)]="pessoa.pessoa_Nome">
+    </mat-form-field>
+    <br>
+    <!-- LINHA DO FORMULARIO CEP -->
+    <mat-form-field class="cep">
+      <input matInput placeholder="CEP" name="endereco_Cep" [(ngModel)]="pessoa.enderecos[0].endereco_Cep">
+    </mat-form-field>
+    <!-- LINHA DO FORMULARIO LOGRADOURO-->
+    <mat-form-field>
+      <input matInput placeholder="Logradouro" name="endereco_Logradouro"
+        [(ngModel)]="pessoa.enderecos[0].endereco_Logradouro">
+    </mat-form-field>
+    <!-- LINHA DO FORMULARIO NUMERO -->
+    <mat-form-field>
+      <input matInput placeholder="Numero" name="endereco_Numero" [(ngModel)]="pessoa.enderecos[0].endereco_Numero">
+    </mat-form-field>
+    <!-- LINHA DO FORMULARIO COMPLEMENTO -->
+    <mat-form-field class="complemento">
+      <input matInput placeholder="Complemento" name="endereco_Complemento"
+        [(ngModel)]="pessoa.enderecos[0].endereco_Complemento">
+    </mat-form-field>
+    <!-- LINHA DO FORMULARIO BAIRRO -->
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Bairro" name="endereco_Bairro" [(ngModel)]="pessoa.enderecos[0].endereco_Bairro">
+    </mat-form-field>
+    <!-- LINHA DO FORMULARIO CIDADE-->
+    <mat-form-field>
+      <input matInput placeholder="Cidade" name="endereco_Cidade" [(ngModel)]="pessoa.enderecos[0].endereco_Cidade">
+    </mat-form-field>
+    <!-- LINHA DO FORMULARIO ESTADO -->
+    <mat-form-field>
+      <input matInput placeholder="Estado" name="endereco_Estado" [(ngModel)]="pessoa.enderecos[0].endereco_Estado">
+    </mat-form-field>
+  </form>
+  <!-- HTML DOS BOTOES  -->
+  <button mat-raised-button (click)="btnSalvar()" color="primary">
+    Salvar
+  </button>
+
+  <button mat-raised-button (click)="btnCancelar()">
+    Cancelar
+  </button>
+
+</mat-card>
+
+<!--DEVS: Tulio R Azevedo/Waldir Junior -->

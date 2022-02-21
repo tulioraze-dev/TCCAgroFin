@@ -1,0 +1,14 @@
+
+
+.table th {
+  text-align: start;
+  margin: initial;
+}
+
+.table td {
+  display: flex;
+  text-align: justify;
+  font-size: xx-small;
+  padding: 5px 150% 2% 5px;
+}
+

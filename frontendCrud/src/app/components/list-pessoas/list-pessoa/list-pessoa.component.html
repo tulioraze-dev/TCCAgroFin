@@ -1,0 +1,87 @@
+<div class="mat-elevation-z4">
+  <table mat-table [dataSource]="dataSource">
+
+    <!-- Pessoa_Id Column -->
+    <ng-container matColumnDef="id" name="pessoa.pessoa_Id">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let pessoa">{{pessoa.pessoa_Id}}</td>
+    </ng-container>
+
+    <!-- Pessoa_Numero_Identificador Column -->
+    <ng-container matColumnDef="CPF/CNPJ" name="pessoa.pessoa_Numero_Identificador">
+      <th mat-header-cell *matHeaderCellDef>CPF/CNPJ</th>
+      <td mat-cell *matCellDef="let pessoa">{{pessoa.pessoa_Numero_Identificador}}</td>
+    </ng-container>
+
+    <!-- Pessoa_Nome Column -->
+    <ng-container matColumnDef="Nome" name="pessoa.pessoa_Nome">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td mat-cell *matCellDef="let pessoa">{{pessoa.pessoa_Nome}}</td>
+    </ng-container>
+
+    <!-- Endereco_Cep Column -->
+    <ng-container matColumnDef="CEP" name="pessoa.endereco[0].endereco_Bairro">
+      <th mat-header-cell *matHeaderCellDef>CEP</th>
+      <td mat-cell *matCellDef="let pessoa">{{pessoa.enderecos[0].endereco_Cep}}</td>
+    </ng-container>
+
+    <!-- Endereco_Logradouro Column -->
+    <ng-container matColumnDef="Logradouro" name="pessoa.enderecos[0].endereco_Logradouro">
+      <th mat-header-cell *matHeaderCellDef>logradouro</th>
+      <td mat-cell *matCellDef="let pessoa">{{pessoa.enderecos[0].endereco_Logradouro}}</td>
+    </ng-container>
+
+    <!-- Endereco_Numero Column -->
+    <ng-container matColumnDef="Numero" name="pessoa.enderecos[0].endereco_Numero">
+      <th mat-header-cell *matHeaderCellDef>Numero</th>
+      <td mat-cell *matCellDef="let pessoa">{{pessoa.enderecos[0].endereco_Numero}}</td>
+    </ng-container>
+
+    <!-- Endereco_Complemento Column -->
+    <ng-container matColumnDef="Complemento" name="pessoa.enderecos[0].endereco_Complemento">
+      <th mat-header-cell *matHeaderCellDef>Complemento</th>
+      <td mat-cell *matCellDef="let pessoa">{{pessoa.enderecos[0].endereco_Complemento}}</td>
+    </ng-container>
+
+    <!-- Endereco_Bairro Column -->
+    <ng-container matColumnDef="Bairro" name="pessoa.enderecos[0].endereco_Bairro">
+      <th mat-header-cell *matHeaderCellDef>Bairro</th>
+      <td mat-cell *matCellDef="let pessoa">{{pessoa.enderecos[0].endereco_Bairro}}</td>
+    </ng-container>
+
+    <!-- Endereco_Cidade Column -->
+    <ng-container matColumnDef="Cidade" name="pessoa.enderecos[0].endereco_Cidade">
+      <th mat-header-cell *matHeaderCellDef>Cidade</th>
+      <td mat-cell *matCellDef="let pessoa">{{pessoa.enderecos[0].endereco_Cidade}}</td>
+    </ng-container>
+
+    <!-- Endereco_Cidade Column -->
+    <ng-container matColumnDef="Estado" name="pessoa.enderecos[0].endereco_Estado">
+      <th mat-header-cell *matHeaderCellDef>Estado</th>
+      <td mat-cell *matCellDef="let pessoa">{{pessoa.enderecos[0].endereco_Estado}}</td>
+    </ng-container>
+
+    <!-- COLUNA DE BOTÕES -->
+    <ng-container matColumnDef="Ações">
+      <th mat-header-cell *matHeaderCellDef> Ações </th>
+      <td mat-cell *matCellDef="let pessoa">
+        <a>
+            <button color="primary" mat-icon-button (click)="btnEditar(pessoa.pessoa_Id)" >
+              <mat-icon>edit</mat-icon>
+            </button>
+
+            <button color="warn" mat-icon-button (click)="btnDelete(pessoa.pessoa_Id)" >
+              <mat-icon>delete</mat-icon>
+            </button>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<!--
+  devs: Tulio R. Azevedo/Waldir Junior
+-->

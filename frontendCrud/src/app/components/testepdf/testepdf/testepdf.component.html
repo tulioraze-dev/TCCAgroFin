@@ -1,0 +1,44 @@
+
+  <div id="content" #content>
+    <button mat-raised-button color="primary">Download</button>
+    <table table class="table table-bordered">
+        <tr class="table-primary">
+            <th><h1>Recibo</h1></th>
+        </tr>
+        <tr *matCellDef="let pessoa">
+            <td>
+              Eu {{pessoa.pessoa_Nome}}, {{pessoa.pessoa_Numero_Identificador}}, localizado em
+              {{pessoa.enderecos[0].endereco_Logradouro}}, {{pessoa.enderecos[0].endereco_Numero}},
+              {{pessoa.enderecos[0].endereco_Complemento}}, {{pessoa.enderecos[0].endereco_Cep}},
+              {{pessoa.enderecos[0].endereco_Bairro}}, {{pessoa.enderecos[0].endereco_Cidade}}-{{pessoa.enderecos[0].endereco_Cidade}}, declaro
+              para os devidos fins que recebi de (ALIARE)(31.150.536/0001-17),
+              o valor de R$ (1.300,00), (Um mil e trezentos reais), em virtude de (Notbook).
+
+              {{pessoa.enderecos[0].endereco_Cidade}}-{{pessoa.enderecos[0].endereco_Cidade}}, (data_corrente) <br><br><br>
+
+              __________________________________________<br>
+              {{pessoa.pessoa_Nome}}<br>
+              {{pessoa.pessoa_Numero_Identificador}}<br><br>
+
+              __________________________________________<br>
+              ALIARE<br>
+              31.150.536/0001-17<br><br>
+            </td>
+        </tr>
+    </table>
+  </div>
+<!--   <script>
+  function Download() {
+    var pegar_dados = document.getElementById('content')?.innerHTML;
+  
+    var janela = window.open('','','width=800,heigth=600')
+    janela?.document.write('<html><head>');
+    janela?.document.write('<title>PDF</title></head>');
+    janela?.document.write('<body>');
+    janela?.document.write(pegar_dados);
+    janela?.document.write('</body></html>');
+    janela?.document.close();
+    janela?.print();
+  }
+</script> -->
+

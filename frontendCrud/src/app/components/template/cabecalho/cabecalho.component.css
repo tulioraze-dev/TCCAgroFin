@@ -1,0 +1,21 @@
+.imagem {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+}
+
+.imagem a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.imagem .logo{
+  max-height: 150px;
+
+}
+
+.imagem .title-group{
+  padding-left: 1600px;
+}

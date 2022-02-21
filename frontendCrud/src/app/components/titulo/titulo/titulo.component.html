@@ -1,0 +1,51 @@
+<mat-card >
+    <mat-card-title>Cadastro de Título </mat-card-title> 
+    <form>
+        <h2 style="margin-bottom: 0px;">Recebedor</h2>
+        <mat-form-field appearance="outline">
+            <mat-select [(ngModel)]="selectedRecebedor" name="selectedRecebedor">
+              <mat-option *matCellDef="let pessoa" [value]="pessoa">
+              {{ pessoa.pessoa_Nome }}
+             </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        <h2 style="margin-bottom: 0px;">Pagador</h2>
+        <mat-form-field appearance="outline">
+            <mat-select [(ngModel)]="selectedPagador" name="selectedPagador">
+              <mat-option *matCellDef="let pessoa" [value]="pessoa">
+              {{ pessoa.pessoa_Nome }}
+             </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        <br>
+        
+        <H2 style="margin-bottom: 0px;" >Título</H2>
+        <mat-form-field>
+            <input matInput [(ngModel)]="titulo.titulo_Data"  placeholder="date" name="titulo_Data">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="titulo.titulo_Valor" placeholder="Valor do Documento" name="titulo_Valor"> 
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="titulo.titulo_Status"  placeholder="PAG/PEN" name="titulo_Status">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput [(ngModel)]="titulo.titulo_Valor_Extenso" placeholder="Valor do Documento" name="titulo_Valor_Extenso"> 
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="titulo.titulo_Descricao" placeholder="Descrição" name="titulo_Descricao"> 
+        </mat-form-field>
+        <br>
+    </form>
+
+    <button mat-raised-button (click)='createTitulo()'>
+        Salvar
+    </button>
+
+    <button mat-raised-button (click)='cancel()'>
+        Cancelar
+    </button>
+</mat-card>
